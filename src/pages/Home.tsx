@@ -1,7 +1,5 @@
-import HomeContent from '../components/HomeContent';
-
 const Home = () => {
-  return <HomeContent />;
+  return <div className="text-3xl font-bold underline">Hello World</div>;
 };
 
 export default Home;
