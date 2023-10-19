@@ -23,17 +23,17 @@ const Home = () => {
         <span className="font-extrabold text-gray-600">‘밋플'&nbsp;</span>
         <span className="text-gray-600">하세요 !</span>
       </p>
-      <button
+      <div
         className="mb-10 mt-6 flex flex-col gap-5 rounded-lg p-5"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%239747FFFF' stroke-width='2' stroke-dasharray='14%2c 8' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e")`,
         }}
       >
-        <Button>우리팀 회의는 뭐가 문제일까?</Button>
-        <Button>우리팀 회의는 어떻게 개선하지?</Button>
-        <Button>문의 & 의견 남기기</Button>
-        <Button>밋플 사전신청하기</Button>
-      </button>
+        <Button path="/problem">우리팀 회의는 뭐가 문제일까?</Button>
+        <Button path="/solution">우리팀 회의는 어떻게 개선하지?</Button>
+        <Button path="/contact">문의 & 의견 남기기</Button>
+        <Button path="/pre-register">밋플 사전신청하기</Button>
+      </div>
     </div>
   );
 };
