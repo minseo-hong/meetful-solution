@@ -1,19 +1,15 @@
-import { useState } from 'react';
 import Button from '../../components/Button';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const Name = () => {
-  const [name, setName] = useState('');
-  const navigate = useNavigate();
+interface Props {
+  input: string;
+  onNextButton: () => void;
+  setInput: React.Dispatch<React.SetStateAction<string>>;
+}
 
+const Name = ({ input, onNextButton, setInput }: Props) => {
   const handleNameInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
-  };
-
-  const handleNextButton = () => {
-    if (name.length > 0) {
-      navigate('/problem/job');
-    }
+    setInput(e.target.value);
   };
 
   return (
@@ -22,7 +18,7 @@ const Name = () => {
         <Link className="mt-7 w-[5.5rem]" to="/">
           <img src="/images/logo-text.png" alt="logo-text" />
         </Link>
-        <div className="mt-28 flex h-12 flex-col justify-end text-center text-base font-medium text-[#979ADC]">
+        <div className="mt-28 flex h-12 flex-col justify-end text-center font-medium text-[#979ADC]">
           안녕하세요, 저희가 뭐라고 부르면 좋을까요!
           <br />
           이름이 부담스럽다면 별명도 좋아요!
@@ -33,11 +29,11 @@ const Name = () => {
         <input
           type="text"
           className="mt-8 h-[42px] w-[216px] rounded-xl bg-white px-4 py-2 text-center text-black outline-none"
-          value={name}
+          value={input}
           onChange={handleNameInput}
         />
       </div>
-      <Button className="mb-16 w-56" onClick={handleNextButton}>
+      <Button className="mb-16 w-56" onClick={onNextButton}>
         다음
       </Button>
     </div>
